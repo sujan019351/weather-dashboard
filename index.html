@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Interactive Weather Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- GOOGLE FONT -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- CSS FILE -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <div class="app" id="app">
+    <!-- LEFT PANEL -->
+    <div class="left-panel">
+      <!-- Header -->
+      <div class="app-header">
+        <div class="branding">
+          <h1>Interactive Weather Dashboard</h1>
+          <span>Real-time conditions · Clean & realistic UI</span>
+        </div>
+
+        <div class="toggle-mode" id="toggleMode">
+          <span id="modeLabel">Day Mode</span>
+          <div class="toggle-switch" id="toggleSwitch">
+            <div class="toggle-thumb"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search -->
+      <form class="search-bar" id="searchForm">
+        <input
+          type="text"
+          id="cityInput"
+          placeholder="Search city (e.g., Bengaluru, Kathmandu, London)"
+          required
+        />
+        <button type="submit">Search</button>
+      </form>
+
+      <!-- Weather main -->
+      <section class="weather-main">
+        <div class="temp-block">
+          <div class="location">
+            <span id="cityName">Bengaluru</span>
+          </div>
+          <div class="date-time" id="dateTime">Loading time…</div>
+
+          <div class="temp">
+            <span id="temperature">28</span>
+            <span class="unit">°C</span>
+          </div>
+
+          <div class="condition" id="conditionText">Partly Cloudy</div>
+          <div class="feels-like" id="feelsLike">Feels like 30°C</div>
+          <div class="high-low" id="highLow">H: 31°C · L: 22°C</div>
+
+          <div class="mini-stats">
+            <div class="stat-card">
+              <div class="stat-label">Humidity</div>
+              <div class="stat-value" id="humidity">68%</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Wind</div>
+              <div class="stat-value" id="wind">12 km/h</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-label">Visibility</div>
+              <div class="stat-value" id="visibility">8 km</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="icon-block">
+          <div class="weather-icon" id="weatherIcon"></div>
+          <div class="icon-label" id="iconLabel">Day • Clouds & Sun</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="right-panel">
+      <div class="panel-card">
+        <div class="panel-title">Mini Forecast (Sample)</div>
+        <div class="forecast-list" id="forecastList">
+          <div class="forecast-item">
+            <span class="label">Next 3 Hours</span>
+            <span class="forecast-temp">29°C · Clouds</span>
+          </div>
+          <div class="forecast-item">
+            <span class="label">Evening</span>
+            <span class="forecast-temp">25°C · Clear</span>
+          </div>
+          <div class="forecast-item">
+            <span class="label">Tonight</span>
+            <span class="forecast-temp">22°C · Breeze</span>
+          </div>
+        </div>
+        <p class="bottom-note">
+          This is the home dashboard UI. In the full project, these values will come from a real weather API
+          like OpenWeatherMap.
+        </p>
+      </div>
+
+      <div class="panel-card">
+        <div class="panel-title">Current Overview</div>
+        <div class="forecast-list">
+          <div class="forecast-item">
+            <span class="label">Condition</span>
+            <span id="overviewCondition">Partly Cloudy, Warm</span>
+          </div>
+          <div class="forecast-item">
+            <span class="label">Comfort Level</span>
+            <span id="overviewComfort">Moderate • Slightly Humid</span>
+          </div>
+          <div class="forecast-item">
+            <span class="label">Suggestion</span>
+            <span id="overviewTip">Carry a light umbrella, just in case.</span>
+          </div>
+        </div>
+        <p class="footer-text">
+          Designed with HTML · CSS · JavaScript
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS FILE -->
+  <script src="script.js" defer></script>
+</body>
+</html>
